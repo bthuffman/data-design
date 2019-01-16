@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h2>User Story:</h2>
-			<p> Dylan needs to respond to a students question.</p>
+			<p> Dylan needs to respond to a student's question.</p>
 		<h2>Use Case:</h2>
 			<h3>Title:</h3>
 				<p> Question and answer via direct message</p>
@@ -17,12 +17,12 @@
 			<h3>Usage preconditions:</h3>
 				<p>Must have a slack account, be logged in and under the correct workspace.</p>
 			<h3>User postconditions:</h3>
-				<p>Sent a direct message response to a student with gif.</p>
+				<p>Sent a direct message response to a student.</p>
 			<h3>Interaction flow:</h3>
 				<ul>
-					<li>Dylan enters https://deepdivecoding.slack.com/.</li>
+					<li>Dylan enters https://deepdivecoding.slack.com/ on his Android phone or opens the slack mobile app.</li>
 					<li>Server returns the deepdivecoding main page.</li>
-					<li>Dylan's dashlane automatically logs him in.</li>
+					<li>Dylan's dashlane or slack mobile app automatically logs him in.</li>
 					<li>Server returns the deepdivecoding main page with Dylan logged in.</li>
 					<li>Dylan clicks on the student's name under direct messages.</li>
 					<li>Server returns the back and forth direct messages between Dylan and the student.</li>
