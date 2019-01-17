@@ -51,13 +51,13 @@
 			<li>channelTitle</li>
 		</ul>
 		-->
-		<h3>Direct Messages</h3>
+		<h3>Direct Message</h3>
 		<ul>
-			<li>directMessagesId (primary key)</li>
-			<li>directMessagesUserId (foriegn key)(multivalued)</li>
-			<li>directMessagesWorkspaceId (foreign key)</li>
-			<li>directMessagesDateAndTime</li>
-			<li>directMessagesTextContent</li>
+			<li>directMessageId (primary key)</li>
+			<li>directMessageUserId (foriegn key)(multivalued)</li>
+			<li>directMessageWorkspaceId (foreign key)</li>
+			<li>directMessageDateAndTime</li>
+			<li>directMessageTextContent</li>
 		</ul>
 		<h3>RELATIONSHIPS</h3>
 		<ul>
