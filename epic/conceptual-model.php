@@ -7,30 +7,35 @@
 	<body>
 		<h1>Conceptual Model</h1>
 		<h2>Entities and Attributes</h2>
-		<h3>Workspaces</h3>
+		<h3>Workspace</h3>
 		<ul>
 			<li>workspaceId (primary key)</li>
-			<li>workspaceChannelId (foreign key)</li>
-			<li>workspaceDirectMessagesId(foreign key)</li>
-			<li>workspaceMemberId (foreign key)</li>
-			<li>workspaceApps (theoretically would be entity unto itself [therefore foreign key] if entities could be > 4.)</li>
-			<li>workspaceThreads (theoretically would be entity unto itself [therefore foreign key] if entities could be > 4.)</li>
+<!--			The bellow foreign keys are unnecessary because workspace is the origin. Only workspace would need to be a foriegn key in those entities.-->
+<!--			<li>workspaceChannelId (foreign key)</li>-->
+<!--			<li>workspaceDirectMessagesId(foreign key)</li>-->
+<!--			<li>workspaceMemberId (foreign key)</li>-->
+			<li>workspaceApps</li>
+<!--			(theoretically would be entity unto itself [therefore foreign key] if entities could be > 4.)-->
+			<li>workspaceThreads</li>
+<!--			(theoretically would be entity unto itself [therefore foreign key] if entities could be > 4.)-->
 		</ul>
-		<h3>Members </h3>
+		<h3>Member </h3>
 		<ul>
 			<li>memberId (primary key)</li>
 			<li>memberWorkspaceId (foreign key)</li>
 			<li>memberDisplayName</li>
 			<li>memberEmail</li>
-			<li>membersFavoriteCaptain</li>
-			<li>membersGitHubProfile</li>
+			<li>memberFavoriteCaptain</li>
+			<li>memberGitHubProfile</li>
 			<li>memberHash</li>
 			<li>memberName</li>
 			<li>memberOnlineStatus</li>
 			<li>memberPhoneNumber</li>
-			<li>membersStatus</li>
+			<li>memberStatus</li>
 			<li>memberTimeZone</li>
 		</ul>
+		<!--Elimnated due to complexity-->
+		<!--
 		<h3>Channels</h3>
 		<ul>
 			<li>channelId (primary key)</li>
@@ -45,18 +50,21 @@
 			<li>channelSharedFiles</li>
 			<li>channelTitle</li>
 		</ul>
+		-->
 		<h3>Direct Messages</h3>
 		<ul>
 			<li>directMessagesId (primary key)</li>
-			<li>directMessagesUserId (foriegn key)</li>
+			<li>directMessagesUserId (foriegn key)(multivalued)</li>
+			<li>directMessagesWorkspaceId (foreign key)</li>
 			<li>directMessagesDateAndTime</li>
 			<li>directMessagesTextContent</li>
 		</ul>
 		<h3>RELATIONSHIPS</h3>
 		<ul>
-			<li>Workspaces has a many to many relationship with Members and a one to many relationship between Channels and messages. </li>
-			<li>Members have a many to many relationship with channels and direct messages.</li>
-			<li>There is no relationship between messages and channels.</li>
+			<li>Workspaces has a many to many relationship with Members and a one to many relationship between Direct Messages. </li>
+			<li>Members has a many to many relationship with Direct Messages.</li>
 		</ul>
+		<h2>Entity Relationship Diagram</h2>
+		<img src="erdplus-diagram-chen-only.png" alt="Entity Relationship Diagram"/>
 	</body>
 </html>

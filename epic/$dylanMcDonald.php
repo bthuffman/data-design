@@ -7,7 +7,7 @@
 	<body>
 		<h1>Data Design Project</h1>
 		<h2>User Persona</h2>
-		<img src="$dylanMcDonald.jpg" alt="dashing photo of Dylan Mc Donald">
+		<img src="$dylanMcDonald.jpg" alt="dashing photo of Dylan Mc Donald"/>
 		<ul>
 			<li><b>Name:</b> Dylan McDonald</li>
 			<li><b>Age:</b> Old as dust, born Stardate 60410.76</li>
