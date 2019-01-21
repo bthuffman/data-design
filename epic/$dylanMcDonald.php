@@ -15,7 +15,7 @@
 			<li><b>Ethnicity:</b> Mixed</li>
 			<li><b>Occupation:</b> Captain, USS Turing</li>
 			<li><b>Favorite captain:</b> Jean-Luc Picard</li>
-			<li><b>Technology:</b> <i>Computer:</i>Self built Intel i7 with 32 GB RAM running Ubuntu Linux Bionic 18.04 and
+			<li><b>Technology:</b> <i>Computer</i> is a Self built Intel i7 with 32 GB RAM running Ubuntu Linux Bionic 18.04 and
 				<i>phone</i> is a Google Pixel XL 2 with Android 9.1.
 			</li>
 			<li><b>Attitude:</b> Playful so likes to leave funny gifs, links and emotes while conveying important and
