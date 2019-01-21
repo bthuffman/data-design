@@ -40,7 +40,7 @@ CREATE TABLE member (
 	memberOnlineStatus VARCHAR(140),
 	memberPhoneNumber VARCHAR(140),
 	memberStatus VARCHAR(140),
-	memberTimeZone TIMESTAMP NOT NULL ,
+	memberTimeZone VARCHAR(140) NOT NULL ,
 	-- this creates an index before making a foreign key
 	INDEX(memberWorkspaceId),
 	-- this creates the actual foreign key relation
