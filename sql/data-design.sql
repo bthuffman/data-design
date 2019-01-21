@@ -9,12 +9,14 @@ ALTER DATABASE bhuffman1 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 -- do this on live data!!!! ESSENTIALLY DON'T DO THIS AT YOUR DAY JOB!
 DROP TABLE IF EXISTS workspace;
 DROP TABLE IF EXISTS member;
-DROP TABLE IF EXISTS direct messages;
+DROP TABLE IF EXISTS directMessages;
 
 -- the CREATE TABLE function is a function that takes tons of arguments to layout the table's schema
+-- this creates the workspace entity
 CREATE TABLE workspace (
 	-- this creates the attribute for the primary key
 	-- not null means the attribute is required!
+	-- table's attributes list:
 	workspaceId BINARY(16) NOT NULL,
 	workspaceApps VARCHAR(32),
 	workspaceThreads VARCHAR(128),
@@ -24,6 +26,7 @@ CREATE TABLE workspace (
 
 -- create the member entity
 CREATE TABLE member (
+	-- table's attributes list:
 	-- this is for yet another primary key...
 	memberId BINARY(16) NOT NULL,
 	-- this is for a foreign key
@@ -46,9 +49,9 @@ CREATE TABLE member (
 	PRIMARY KEY(memberId)
 	);
 
--- create the like entity (a weak entity from an m-to-n for profile --> tweet)
+-- create the directMessage entity (a weak entity from an m-to-n from member and a 1-to-n with workspace)
 CREATE TABLE directMessage (
-	-- these are still foreign keys
+	-- table's attributes list:
 	directMessageId BINARY(16) NOT NULL,
 	directMessageWorkspaceId BINARY(16) NOT NULL,
 	directMessageMemberId BINARY(16) NOT NULL,
@@ -59,14 +62,7 @@ CREATE TABLE directMessage (
 	INDEX(directMessageMemberId),
 	-- create the foreign key relations
 	FOREIGN KEY(directMessageWorkspaceId) REFERENCES workspace(workspaceId),
-	FOREIGN KEY(directMessageMemberId) REFERENCES directMessage(directMessageId),
+	FOREIGN KEY(directMessageMemberId) REFERENCES member(memberId),
 	-- and finally create the primary key
 	PRIMARY KEY(directMessageId)
 	);
-
--- insert data into databases
-INSERT INTO workspace(workspaceId, workspaceApps, workspaceThreads) VALUE (UNHEX("a6f43e6949804a2f83c6cfe5a91cfa96"), "This is an App", "This is a thread");
-INSERT INTO member(memberId, memberWorkspaceId, memberDisplayName, memberEmail, memberFavoriteCaptain, memberGitHubProfile, memberHash, memberName, memberOnlineStatus, memberPhoneNumber, memberStatus, memberTimeZone)  VALUE (UNHEX("3eff76ab76f347d0880f005d4344498a"));
-
--- example of executable select
-SELECT workspaceId, workspaceApps, workspaceThreads  from workspace workspaceId = UNHEX("a6f43e6949804a2f83c6cfe5a91cfa96");

@@ -65,6 +65,6 @@
 			<li>Members has a many to many relationship with Direct Messages.</li>
 		</ul>
 		<h2>Entity Relationship Diagram</h2>
-		<img src="erdplus-diagram-chen-only.png" alt="Entity Relationship Diagram"/>
+		<img src="erdplus-diagram-chrow.png" alt="Entity Relationship Diagram"/>
 	</body>
 </html>
