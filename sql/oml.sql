@@ -10,6 +10,7 @@ INSERT INTO directMessage(directMessageId, directMessageWorkspaceId, directMessa
 	VALUE (UNHEX("f4bbb59857f8496c86672f0b197f7b68"), UNHEX("a6f43e6949804a2f83c6cfe5a91cfa96"), UNHEX("3eff76ab76f347d0880f005d4344498a"), "2019-01-21 11:08.10", "Hi this is more text content!");
 
 -- example of executable select using the primary key for the selector
+-- note that select is equivalent to other databases "READ"
 SELECT workspaceId, workspaceApps, workspaceThreads
 	from workspace workspaceId = UNHEX("a6f43e6949804a2f83c6cfe5a91cfa96");
 
@@ -29,6 +30,7 @@ UPDATE directMessage
 SELECT directMessage.directMessageWorkspaceId, member.memberWorkspaceId
 	FROM directMessage
 	INNER JOIN member ON directMessage.directMessageWorkspaceId = member.memberWorkspaceId
+WHERE directMessageTextContent = "Hi this is more text content!";
 
 -- example of a select statement based of off DDC-Twitter that counts the number of likes for a specific tweet.
 SELECT COUNT(directMessageTextContent) FROM directMessage;
