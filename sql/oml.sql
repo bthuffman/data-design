@@ -32,5 +32,6 @@ SELECT directMessage.directMessageWorkspaceId, member.memberWorkspaceId
 	INNER JOIN member ON directMessage.directMessageWorkspaceId = member.memberWorkspaceId
 WHERE directMessageTextContent = "Hi this is more text content!";
 
--- example of a select statement based of off DDC-Twitter that counts the number of likes for a specific tweet.
+-- example of a select statement based of off DDC-Twitter that counts the number of likes for a specific tweet. In this
+-- case it is counting the number of directMessages with TextContent.
 SELECT COUNT(directMessageTextContent) FROM directMessage;
