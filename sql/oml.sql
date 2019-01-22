@@ -15,7 +15,7 @@ SELECT workspaceId, workspaceApps, workspaceThreads
 	from workspace workspaceId = UNHEX("a6f43e6949804a2f83c6cfe5a91cfa96");
 
 -- delete the foreign key in directMessage content prior to dropping the member table so that can correct the timezone element within the member table
-DELETE FROM directMessage;
+DELETE FROM directMessage WHERE directMessageId = UNHEX("71cad04774bf46b2852bfc37f2d6b9d0");
 -- also required to drop the directMessage table
 DROP TABLE directMessage;
 -- delete member table so can reconfigure the timezone element.
